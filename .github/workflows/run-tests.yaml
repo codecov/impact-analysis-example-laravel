@@ -35,6 +35,7 @@ jobs:
       # Code quality
       - name: Execute tests via PestPHP
         run: |
+          php artisan key:generate
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
       - uses: codecov/codecov-action@v2
         with:
