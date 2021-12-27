@@ -25,12 +25,12 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: pcov
+      - name: Install Dependencies
+        run: composer install --no-ansi --no-interaction --no-scripts --prefer-dist
       - name: Copy .env
         run: |
           php artisan key:generate --env=testing
           php -r "file_exists('.env') || copy('.env.testing', '.env');"
-      - name: Install Dependencies
-        run: composer install --no-ansi --no-interaction --no-scripts --prefer-dist
       - name: PHP Version
         run: php --version
 
