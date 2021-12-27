@@ -6,12 +6,14 @@ on: [push, pull_request]
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
-    working-directory: ./example-app
+    defaults:
+      run:
+        working-directory: example-app
 
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: ['7.4', '8.0', '8.1']
+        php-versions: ['8.0', '8.1']
         dependency-stability: ['prefer-stable']
 
     name: P${{ matrix.php-versions }} - ${{ matrix.operating-system}}
@@ -33,9 +35,10 @@ jobs:
       # Code quality
       - name: Execute tests via PestPHP
         run: |
+          php artisan key:generate
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
-      # - uses: codecov/codecov-action@v2
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     flags: PHP-v${{ matrix.php-versions }}_${{ matrix.operating-system}}
-      #     files: ./coverage.xml
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: PHP-v${{ matrix.php-versions }}_${{ matrix.operating-system}}
+          files: ./example-app/coverage.xml
