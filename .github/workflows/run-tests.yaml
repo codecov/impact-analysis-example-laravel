@@ -6,7 +6,8 @@ on: [push, pull_request]
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
-    working-directory: ./example-app
+    env:
+      working-directory: ./example-app
 
     strategy:
       matrix:
