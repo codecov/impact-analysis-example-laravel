@@ -9,11 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "codecov/laravel-codecov-opentelemetry": "^0.0.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/psr7": "^2.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "php-http/curl-client": "^2.2",
+        "php-http/message": "^1.12"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

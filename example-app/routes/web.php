@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['codecov.insights'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-Route::group(['namespace' => '\App\Http\Controllers'], function () {
-    Route::get('/example', 'ExampleController@index')->name('example');
+    Route::group(['namespace' => '\App\Http\Controllers'], function () {
+        Route::get('/example', 'ExampleController@index')->name('example');
+    });
 });
