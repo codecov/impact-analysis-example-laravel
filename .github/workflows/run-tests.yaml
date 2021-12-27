@@ -35,9 +35,8 @@ jobs:
       # Code quality
       - name: Execute tests via PestPHP
         run: |
-          php artisan key:generate
           export COMMIT_SHA=$GITHUB_SHA
-          echo $COMMIT_SHA
+          php artisan key:generate
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
         env:
           CODECOV_OTEL_PROFILING_TOKEN: ${{ secrets.CODECOV_OTEL_PROFILING_TOKEN }}
