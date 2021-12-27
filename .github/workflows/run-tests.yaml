@@ -36,10 +36,12 @@ jobs:
       - name: Execute tests via PestPHP
         run: |
           php artisan key:generate
+          export COMMIT_SHA=$GITHUB_SHA
+          echo $COMMIT_SHA
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
         env:
           CODECOV_OTEL_PROFILING_TOKEN: ${{ secrets.CODECOV_OTEL_PROFILING_TOKEN }}
-          COMMIT_SHA: ${{ GITHUB_SHA }}
+
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
