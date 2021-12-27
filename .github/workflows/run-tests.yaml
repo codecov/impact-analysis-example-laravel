@@ -41,4 +41,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: PHP-v${{ matrix.php-versions }}_${{ matrix.operating-system}}
-          files: ./coverage.xml
+          files: ./example-app/coverage.xml
