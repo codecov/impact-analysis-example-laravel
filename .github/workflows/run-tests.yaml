@@ -24,10 +24,13 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: pcov
+        working-directory: ${{env.working-directory}}
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+        working-directory: ${{env.working-directory}}
       - name: Install Dependencies
         run: composer install --no-ansi --no-interaction --no-scripts --prefer-dist
+        working-directory: ${{env.working-directory}}
       - name: PHP Version
         run: php --version
 
@@ -35,7 +38,9 @@ jobs:
       - name: Execute tests via PestPHP
         run: |
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
+        working-directory: ${{env.working-directory}}
       - uses: codecov/codecov-action@v2
+        working-directory: ${{env.working-directory}}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: PHP-v${{ matrix.php-versions }}_${{ matrix.operating-system}}
