@@ -25,18 +25,22 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: pcov
-      - name: Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
         run: composer install --no-ansi --no-interaction --no-scripts --prefer-dist
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
       - name: PHP Version
         run: php --version
 
       # Code quality
       - name: Execute tests via PestPHP
         run: |
-          php artisan key:generate
+          export COMMIT_SHA=$GITHUB_SHA
           vendor/bin/pest --coverage --coverage-cobertura coverage.xml
+        env:
+          APP_KEY: ${{ secrets.APP_KEY }}
+          CODECOV_OTEL_PROFILING_TOKEN: ${{ secrets.CODECOV_OTEL_PROFILING_TOKEN }}
+
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
