@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a5f257bfb8b65ea4a7093db8eb1bc5e",
+    "content-hash": "cc4617dc6087c23eebfe5e7b34bb7d9e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -190,31 +190,41 @@
         },
         {
             "name": "codecov/laravel-codecov-opentelemetry",
-            "version": "v0.0.1",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codecov/laravel-codecov-opentelemetry.git",
-                "reference": "19260f03c07986d3ba1f0d5a538cd26f0dcbb74a"
+                "reference": "7da46b2871352d140a1632bcc28398cadd4ef6b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codecov/laravel-codecov-opentelemetry/zipball/19260f03c07986d3ba1f0d5a538cd26f0dcbb74a",
-                "reference": "19260f03c07986d3ba1f0d5a538cd26f0dcbb74a",
+                "url": "https://api.github.com/repos/codecov/laravel-codecov-opentelemetry/zipball/7da46b2871352d140a1632bcc28398cadd4ef6b8",
+                "reference": "7da46b2871352d140a1632bcc28398cadd4ef6b8",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.0.1",
+                "ext-json": "*",
                 "open-telemetry/opentelemetry": "0.0.2",
                 "php": "^7.3|^8.0",
-                "phpunit/php-code-coverage": "^9.2.8"
+                "php-http/client-common": "^2.5",
+                "php-http/discovery": "^1.0",
+                "php-http/httplug": "^2.0",
+                "php-http/message-factory": "^1.0",
+                "phpunit/php-code-coverage": "^9.2.8",
+                "psr/http-client-implementation": "^1.0",
+                "psr/http-message": "^1.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3.1",
                 "orchestra/testbench": "^5.0|^6.0",
                 "pestphp/pest-plugin-laravel": "^1.0",
+                "php-http/guzzle7-adapter": "^1.0",
+                "php-http/message": "^1.0",
+                "php-http/mock-client": "^1.5",
                 "phpunit/phpunit": "^9.3.3",
                 "squizlabs/php_codesniffer": "^3.6"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -238,9 +248,9 @@
             "description": "Laravel middleware for Codecov's OpenTelemetry",
             "support": {
                 "issues": "https://github.com/codecov/laravel-codecov-opentelemetry/issues",
-                "source": "https://github.com/codecov/laravel-codecov-opentelemetry/tree/v0.0.1"
+                "source": "https://github.com/codecov/laravel-codecov-opentelemetry/tree/main"
             },
-            "time": "2021-11-15T17:07:45+00:00"
+            "time": "2021-12-28T17:04:09+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2407,6 +2417,81 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "php-http/client-common",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/client-common.git",
+                "reference": "d135751167d57e27c74de674d6a30cef2dc8e054"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/client-common/zipball/d135751167d57e27c74de674d6a30cef2dc8e054",
+                "reference": "d135751167d57e27c74de674d6a30cef2dc8e054",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "php-http/httplug": "^2.0",
+                "php-http/message": "^1.6",
+                "php-http/message-factory": "^1.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "symfony/options-resolver": "~4.0.15 || ~4.1.9 || ^4.2.1 || ^5.0 || ^6.0",
+                "symfony/polyfill-php80": "^1.17"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "^1.1",
+                "guzzlehttp/psr7": "^1.4",
+                "nyholm/psr7": "^1.2",
+                "phpspec/phpspec": "^5.1 || ^6.3 || ^7.1",
+                "phpspec/prophecy": "^1.10.2",
+                "phpunit/phpunit": "^7.5.15 || ^8.5 || ^9.3"
+            },
+            "suggest": {
+                "ext-json": "To detect JSON responses with the ContentTypePlugin",
+                "ext-libxml": "To detect XML responses with the ContentTypePlugin",
+                "php-http/cache-plugin": "PSR-6 Cache plugin",
+                "php-http/logger-plugin": "PSR-3 Logger plugin",
+                "php-http/stopwatch-plugin": "Symfony Stopwatch plugin"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Common HTTP Client implementations and tools for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "client",
+                "common",
+                "http",
+                "httplug"
+            ],
+            "support": {
+                "issues": "https://github.com/php-http/client-common/issues",
+                "source": "https://github.com/php-http/client-common/tree/2.5.0"
+            },
+            "time": "2021-11-26T15:01:24+00:00"
         },
         {
             "name": "php-http/curl-client",
@@ -9009,7 +9094,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "codecov/laravel-codecov-opentelemetry": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
