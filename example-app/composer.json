@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "codecov/laravel-codecov-opentelemetry": "dev-main#7da46b2871352d140a1632bcc28398cadd4ef6b8",
+        "codecov/laravel-codecov-opentelemetry": "^0.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "guzzlehttp/psr7": "^2.1",
