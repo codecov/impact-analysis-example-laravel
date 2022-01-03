@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc4617dc6087c23eebfe5e7b34bb7d9e",
+    "content-hash": "66c7bf0f7aceeb6bdf5149e514d6c9f7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -194,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codecov/laravel-codecov-opentelemetry.git",
-                "reference": "7da46b2871352d140a1632bcc28398cadd4ef6b8"
+                "reference": "93af69158ada9f22bada39f1c3582abf2109298c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codecov/laravel-codecov-opentelemetry/zipball/7da46b2871352d140a1632bcc28398cadd4ef6b8",
-                "reference": "7da46b2871352d140a1632bcc28398cadd4ef6b8",
+                "url": "https://api.github.com/repos/codecov/laravel-codecov-opentelemetry/zipball/93af69158ada9f22bada39f1c3582abf2109298c",
+                "reference": "93af69158ada9f22bada39f1c3582abf2109298c",
                 "shasum": ""
             },
             "require": {
@@ -250,7 +250,7 @@
                 "issues": "https://github.com/codecov/laravel-codecov-opentelemetry/issues",
                 "source": "https://github.com/codecov/laravel-codecov-opentelemetry/tree/main"
             },
-            "time": "2021-12-28T17:04:09+00:00"
+            "time": "2021-12-28T19:54:12+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
