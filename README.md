@@ -1,5 +1,7 @@
 # Laravel RTI Example
 
+[![codecov](https://codecov.io/gh/codecov/laravel-rti-example/branch/main/graph/badge.svg?token=EDLK9jZLMH)](https://codecov.io/gh/codecov/laravel-rti-example)
+
 A repository demonstrating how to use Codecov's Runtime Insights feature with the Laravel framework. This example repository leverages the [codecov/laravel-codecov-opentelemetry](https://github.com/codecov/laravel-codecov-opentelemetry) package to send information to Codecov's Runtime Insights API. It is recommended to view the README for that package to learn more about Runtime Insights.
 
 This repository is not intended to be used directly, but rather referred to as a reference for how to integrate Runtime Insights into your own Laravel projects.
