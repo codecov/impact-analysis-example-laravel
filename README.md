@@ -19,6 +19,16 @@ pcov installation varies depending on the underlying system, you can see how it 
 
 Alternative installation methods for pcov, including for other distributions of Linux, can be found in the codecov/laravel-codecov-opentelemetry [documentation](https://github.com/codecov/laravel-codecov-opentelemetry#system-dependencies).
 
+## Installation
+
+The package can be installed with:
+
+```
+composer require codecov/laravel-codecov-opentelemetry:^0.1
+```
+
+It is _not_ recommended to use `dev-main` as, due to the pace of development against the `main` branch, it is frequently unstable. 
+
 ## Required Configuration
 
 The codecov/laravel-codecov-opentelemetry package provides a configuration file that can be published via
