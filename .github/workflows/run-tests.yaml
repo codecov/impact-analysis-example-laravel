@@ -41,7 +41,7 @@ jobs:
           APP_KEY: ${{ secrets.APP_KEY }}
           CODECOV_OTEL_PROFILING_TOKEN: ${{ secrets.CODECOV_OTEL_PROFILING_TOKEN }}
 
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: PHP-v${{ matrix.php-versions }}_${{ matrix.operating-system}}
